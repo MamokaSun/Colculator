@@ -16,25 +16,30 @@ public class Main {
         list = mathExpression.split(delimeter);//Разделяем на массив строк
 
 
-        System.out.println(IntNumbers.isInt(list[0], list[2]));//Проверка ответа булевого значения
-        if (IntNumbers.isInt(list[0], list[2]) == true) {
-            a = IntNumbers.intNum(list[0], list[2]);
-            b = IntNumbers.intNum(list[2], list[0]);
-        }else if(IntNumbers.isInt(list[0], list[2]) == false){
+        System.out.println(IntNumbers.isNum(list[0], list[2]));//Проверка ответа булевого значения
+        if (IntNumbers.isNum(list[0], list[2]) == true) {
+            a = IntNumbers.itNum(list[0], list[2]);
+            b = IntNumbers.itNum(list[2], list[0]);
+        }else if(IntNumbers.isNum(list[0], list[2]) == false){
             a = RimNum.rimToInt(list[0], list[2]);
             b = RimNum.rimToInt(list[2], list[0]);
-            }
-        else {
+            } else {
             System.out.println("error");}
 
-        Operations.count(list[1], a, b);
-        if (IntNumbers.isInt(list[0], list[2]) == false){
-            RimNum.rimNumbers(Operations.count(list[1], a, b));
-            System.out.println(RimNum.rimNumbers(Operations.count(list[1], a, b)));
-        }else if (IntNumbers.isInt(list[0], list[2]) == true){
+
+        if (IntNumbers.isNum(list[0], list[2]) == false){//Выводим значение в зависимоти от изначальных данных
+            int[] arrForCount = RimNum.listForRim(Operations.count(list[1], a, b));
+            if (arrForCount.length == 1){
+                System.out.println(RimNum.rimNumLittle(RimNum.listForRim(Operations.count(list[1], a, b))));
+            }else if(arrForCount.length == 2){
+                String first = RimNum.rimNumBig(RimNum.listForRim(Operations.count(list[1], a, b)));
+                String second = RimNum.rimNumLittle(RimNum.listForRim(Operations.count(list[1], a, b)));
+                System.out.println(first + second);
+            }
+
+        }else if (IntNumbers.isNum(list[0], list[2]) == true){
             System.out.println(Operations.count(list[1], a, b));
         }else {
-            System.out.println("error");
-        }
+            System.out.println("error"); }
     }
 }
