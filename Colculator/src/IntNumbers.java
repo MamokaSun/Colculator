@@ -9,9 +9,9 @@ public class IntNumbers {
         }
         return true;
     }
-    public static int intNum (String l0, String l2) {
-        if (isInt(l0, l2) == true) {//Преобразование строки в число типа int
-            a = Integer.parseInt(l0);
+    public static int intNum (String list0, String list2) {
+        if (isInt(list0, list2) == true) {//Преобразование строки в число типа int
+            a = Integer.parseInt(list0);
         } else {
             System.out.println("Что-то пошло не так");
         }
