@@ -11,25 +11,30 @@ public class Main {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String mathExpression = reader.readLine();
 
+
         String[] list;
         String delimeter = " ";
         list = mathExpression.split(delimeter);//Разделяем на массив строк
 
+        System.out.println(IntNumbers.isNum(list[0]));
+        System.out.println(IntNumbers.isNum(list[2]));
 
-        System.out.println(IntNumbers.isNum(list[0], list[2]));//Проверка ответа булевого значения
-        if (IntNumbers.isNum(list[0], list[2]) == true) {
+        boolean aNumB = IntNumbers.isNum(list[0]);
+        boolean bNumB = IntNumbers.isNum(list[0]);
+
+        if (aNumB == true && bNumB == true) { //Присваиваем значение переменным a и b
             a = IntNumbers.itNum(list[0], list[2]);
             b = IntNumbers.itNum(list[2], list[0]);
-        } else if (IntNumbers.isNum(list[0], list[2]) == false) {
+        } else if (aNumB == false && bNumB == false) {
             a = RimNum.rimToInt(list[0], list[2]);
             b = RimNum.rimToInt(list[2], list[0]);
         } else {
-            System.out.println("error");
+            System.out.println("error1");
         }
 
         int result = Operations.count(list[1], a, b);
 
-        if (IntNumbers.isNum(list[0], list[2]) == false) {//Выводим значение в зависимоти от изначальных данных
+        if (aNumB == false && bNumB == false) {//Выводим значение в зависимоти от изначальных данных
             int[] arrForCount = RimNum.listForRim(result);
             if (arrForCount.length == 1) {
                 System.out.println(RimNum.rimNumLittle(RimNum.listForRim(result), 0));
@@ -42,10 +47,10 @@ public class Main {
                     System.out.println(first + second);
                 }
             }
-        } else if (IntNumbers.isNum(list[0], list[2]) == true) {
+        } else if (aNumB == true && bNumB == true) {
                 System.out.println(Operations.count(list[1], a, b));
         } else {
-                System.out.println("error");
+                System.out.println("error2");
         }
 
     }

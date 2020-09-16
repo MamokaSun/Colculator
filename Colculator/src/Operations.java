@@ -11,7 +11,9 @@ public class Operations {
             sum = (a * b);
         }else if (s.equals("/")){
             sum = (a / b);
-        }else {System.out.println("Такой знак " + s + " не используется");
+        }else {
+            System.out.println("Такой знак " + s + " не используется");
+            System.exit(0);
         }return sum;
     }
 }

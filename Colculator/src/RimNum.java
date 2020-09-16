@@ -16,7 +16,7 @@ public class RimNum {
 
     public static int rimToInt (String list0, String list2){
 
-        if (IntNumbers.isNum(list0, list2) == false){
+        if (IntNumbers.isNum(list0) == false && IntNumbers.isNum(list2) == false){
             switch (list0){
                 case "I":  a = 1;
                     break;
