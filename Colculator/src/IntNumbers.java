@@ -15,7 +15,7 @@ public class IntNumbers {
         if (isNum(list0, list2) == true) {//Преобразование строки в число
             a = Integer.parseInt(list0);
         } else {
-            System.out.println("Что-то пошло не так");
+            System.out.println("Что-то пошло не так.");
         }
         return a;
     }
