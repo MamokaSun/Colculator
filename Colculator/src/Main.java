@@ -16,11 +16,8 @@ public class Main {
         String delimeter = " ";
         list = mathExpression.split(delimeter);//Разделяем на массив строк
 
-        System.out.println(IntNumbers.isNum(list[0]));
-        System.out.println(IntNumbers.isNum(list[2]));
-
         boolean aNumB = IntNumbers.isNum(list[0]);
-        boolean bNumB = IntNumbers.isNum(list[0]);
+        boolean bNumB = IntNumbers.isNum(list[2]);
 
         if (aNumB == true && bNumB == true) { //Присваиваем значение переменным a и b
             a = IntNumbers.itNum(list[0], list[2]);
@@ -29,7 +26,8 @@ public class Main {
             a = RimNum.rimToInt(list[0], list[2]);
             b = RimNum.rimToInt(list[2], list[0]);
         } else {
-            System.out.println("error1");
+            System.out.println("Кальулятор умеет работать только с римскими или арабскими цифрами");
+            System.exit(0);
         }
 
         int result = Operations.count(list[1], a, b);
@@ -47,10 +45,8 @@ public class Main {
                     System.out.println(first + second);
                 }
             }
-        } else if (aNumB == true && bNumB == true) {
-                System.out.println(Operations.count(list[1], a, b));
         } else {
-                System.out.println("error2");
+                System.out.println(Operations.count(list[1], a, b));
         }
 
     }
