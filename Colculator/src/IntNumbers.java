@@ -22,13 +22,6 @@ public class IntNumbers {
                 System.out.println("Число не находится в диапазоне от 1 до 10");
                 System.exit(0);
             }
-
-        } else if(isNum(list0) == true && isNum(list2) == false){
-            System.out.println("Калькулятор умеет работать только с арабскими или римскими цифрами");
-            System.exit(0);
-        }else if(isNum(list0) == false && isNum(list2) == true){
-            System.out.println("Калькулятор умеет работать только с арабскими или римскими цифрами");
-            System.exit(0);
         }
         return a;
     }

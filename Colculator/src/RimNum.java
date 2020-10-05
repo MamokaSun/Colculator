@@ -15,9 +15,10 @@ public class RimNum {
     }
 
     public static int rimToInt (String list0, String list2){
-
+        String letter = list0;
+        String bigL = letter.toUpperCase();
         if (IntNumbers.isNum(list0) == false && IntNumbers.isNum(list2) == false){
-            switch (list0){
+            switch (bigL){
                 case "I":  a = 1;
                     break;
                 case "II": a = 2;
@@ -38,9 +39,9 @@ public class RimNum {
                     break;
                 case "X": a = 10;
                     break;
+                default: System.out.println("Число не находится в диапазоне от 1 до 10");
+                System.exit(0);
             }
-        }else {
-            System.out.println("error");
         }
         return a;
     }
